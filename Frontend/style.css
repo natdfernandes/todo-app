@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor-white-smoke: rgba(242, 244, 243, 1);
+    --cor-White-smoke-60: rgb(242, 244, 243);
+    --cor-royal-violet: rgb(115, 29, 216);
+    --cor-bright-lavander: rgb(164, 145, 211);
+    --cor-midnight-violet-900: rgb(30, 21, 42);
+    --cor-midnight-violet-700: rgb(33, 1, 36);
+
+    --border-radius: 4px;
+    --padding-padrao: 6px;
+    --gap-padrao: 6px;
+
+    --font-roboto-h1: 28px;
+    --font-roboto-h2: 24px;
+    --font-roboto-h3: 20px;
+    --font-roboto-paragrafo: 16px;
+    --font-roboto-botao: 16px;
+}
+
+* {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body {
+
+    gap: 6px;
+    background-color: var(--cor-white-smoke);
+}
+
+header {
+    color: white;
+    background-color: var(--cor-bright-lavander);
+    text-align: center;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border-radius: var(--border-radius);
+
+}
+
+.imagem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 86px;
+    height: 112px;
+}
+
+.texto-h1 {
+    text-align: var();
+}
+
+.texto-item {
+    color: var(--cor-midnight-violet-900);
+}
+
+
+ul {
+    padding: 0%;
+}
+
+ul>li {
+
+    list-style: none;
+    background-color: var(--cor-bright-lavander);
+}
+
+
+
+.botao-estilo {
+
+    background-color: var(--cor-bright-lavander);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+
+
+footer {
+    color: white;
+    background-color: var(--cor-bright-lavander);
+    text-align: center;
+}
