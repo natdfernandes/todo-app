@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --cor-white-smoke: rgba(242, 244, 243, 1);
-    --cor-White-smoke-60: rgb(242, 244, 243);
+    --cor-white-smoke: rgb(242, 244, 243);
+    --cor-White-smoke-60: rgba(242, 244, 243, .6);
     --cor-royal-violet: rgb(115, 29, 216);
     --cor-bright-lavander: rgb(164, 145, 211);
     --cor-midnight-violet-900: rgb(30, 21, 42);
+    --cor-midnight-violet-900-40: rgba(30, 21, 42, .4);
     --cor-midnight-violet-700: rgb(33, 1, 36);
 
     --border-radius: 4px;
@@ -20,15 +21,22 @@
 }
 
 * {
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    padding: 0%;
+    margin: 0%;
 }
 
 body {
-
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     gap: 6px;
     background-color: var(--cor-white-smoke);
+    padding: 6px;
+    max-width: 720px;
+    margin: auto;
 }
 
 header {
@@ -39,6 +47,7 @@ header {
     gap: 15px;
     align-items: center;
     border-radius: var(--border-radius);
+    padding: var(--padding-padrao);
 
 }
 
@@ -54,21 +63,37 @@ header {
     text-align: var();
 }
 
-.texto-item {
+h2.texto-item {
     color: var(--cor-midnight-violet-900);
+    margin: 24px 0;
 }
 
 
 ul {
     padding: 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
 }
 
 ul>li {
-
+    color: var(--cor-white-smoke);
     list-style: none;
     background-color: var(--cor-bright-lavander);
+    border-radius: var(--border-radius);
+    padding: var(--padding-padrao);
+    vertical-align: 12px;
+    gap: var(--gap-padrao);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+li>div {
+    display: flex;
+    gap: var(--gap-padrao);
+}
 
 
 .botao-estilo {
@@ -77,16 +102,82 @@ ul>li {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    margin: auto;
+    border: 2px solid rgb(0, 0, 0);
+    margin: 32px auto;
     display: flex;
     align-items: center;
     justify-content: center
 }
 
+.botao-estilo:hover {
+    background-color: var(--cor-midnight-violet-900);
+    cursor: pointer;
+}
 
+.adicionar-item {
+    color: var(--cor-white-smoke);
+    background-color: var(--cor-bright-lavander);
+    padding: 12px 0;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+p {
+    text-decoration: underline;
+    text-align: center;
+}
+
+.botao {
+    padding: 18px;
+    border-radius: 4px;
+    border: none;
+    flex-grow: 1;
+}
+
+.botao-principal {
+    color: var(--cor-white-smoke);
+    background-color: var(--cor-midnight-violet-900);
+}
+
+.botao-secundario {
+    color: var(--cor-white-smoke);
+    background-color: var(--cor-midnight-violet-900-40);
+}
+
+dialog {
+    text-align: center;
+    padding: 8px;
+    border: none;
+    margin: auto;
+    min-width: 384px;
+    gap: 20px;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+}
+
+dialog[open] {
+    display: flex;
+}
+
+dialog>div.grupo-botoes {
+    display: flex;
+    gap: var(--gap-padrao);
+}
+
+input {
+    padding: 4px 8px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .6);
+}
 
 footer {
     color: white;
     background-color: var(--cor-bright-lavander);
     text-align: center;
+    padding: var(--padding-padrao);
+    border-radius: var(--border-radius);
+    padding-left: 18px;
+    margin-top: auto;
 }
