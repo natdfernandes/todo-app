@@ -23,9 +23,12 @@
         <ul>
             <li> Item 1
                 <div>
-
-                    <img src="/imagens/Trash.svg" alt="Icone de Lixeira">
-                    <img src="/imagens/Edit.svg" alt="Icone de Editar">
+                    <button>
+                        <img src="/imagens/Trash.svg" alt="Icone de Lixeira">
+                    </button>
+                    <button class="botao-editar">
+                        <img src="/imagens/Edit.svg" alt="Icone de Editar">
+                    </button>
                 </div>
             </li>
             <li class="edicao">
@@ -34,49 +37,67 @@
             </li>
             <li> Item 2
                 <div>
-
-                    <img src="/imagens/Trash.svg" alt="Icone de Lixeira">
-                    <img src="/imagens/Edit.svg" alt="Icone de Editar">
+                    <button>
+                        <img src="/imagens/Trash.svg" alt="Icone de Lixeira">
+                    </button>
+                    <button class="botao-editar">
+                        <img src="/imagens/Edit.svg" alt="Icone de Editar">
+                    </button>
                 </div>
             </li>
             <li> Item 3
                 <div>
-
-                    <img src="/imagens/Trash.svg" alt="Icone de Lixeira">
-                    <img src="/imagens/Edit.svg" alt="Icone de Editar">
+                    <button>
+                        <img src="/imagens/Trash.svg" alt="Icone de Lixeira">
+                    </button>
+                    <button class="botao-editar">
+                        <img src="/imagens/Edit.svg" alt="Icone de Editar">
+                    </button>
                 </div>
             </li>
             <li> Item 4
                 <div>
-
-                    <img src="/imagens/Trash.svg" alt="Icone de Lixeira">
-                    <img src="/imagens/Edit.svg" alt="Icone de Editar">
+                    <button>
+                        <img src="/imagens/Trash.svg" alt="Icone de Lixeira">
+                    </button>
+                    <button class="botao-editar">
+                        <img src="/imagens/Edit.svg" alt="Icone de Editar">
+                    </button>
                 </div>
             </li>
             <li> Item 5
                 <div>
-
-                    <img src="/imagens/Trash.svg" alt="Icone de Lixeira">
-                    <img src="/imagens/Edit.svg" alt="Icone de Editar">
+                    <button>
+                        <img src="/imagens/Trash.svg" alt="Icone de Lixeira">
+                    </button>
+                    <button class="botao-editar">
+                        <img src="/imagens/Edit.svg" alt="Icone de Editar">
+                    </button>
                 </div>
             </li>
             <li> Item 6
                 <div>
-
-                    <img src="/imagens/Trash.svg" alt="Icone de Lixeira">
-                    <img src="/imagens/Edit.svg" alt="Icone de Editar">
+                    <button>
+                        <img src="/imagens/Trash.svg" alt="Icone de Lixeira">
+                    </button>
+                    <button class="botao-editar">
+                        <img src="/imagens/Edit.svg" alt="Icone de Editar">
+                    </button>
                 </div>
             </li>
             <li> Item 7
                 <div>
-
-                    <img src="/imagens/Trash.svg" alt="Icone de Lixeira">
-                    <img src="/imagens/Edit.svg" alt="Icone de Editar">
+                    <button>
+                        <img src="/imagens/Trash.svg" alt="Icone de Lixeira">
+                    </button>
+                    <button class="botao-editar">
+                        <img src="/imagens/Edit.svg" alt="Icone de Editar">
+                    </button>
                 </div>
             </li>
         </ul>
 
-        <button class="botao-estilo"><img src="/imagens/add.svg" alt="Adicionar"></button>
+        <button class="botao-estilo" id="botao-adicionar"><img src="/imagens/add.svg" alt="Adicionar"></button>
 
         <dialog closedby="any">
             <h3 class="adicionar-item">Adicione o novo item...</h3>
@@ -97,17 +118,33 @@
 </body>
 
 <script>
-    const button = document.querySelector("button")
+    const botao_adicionar = document.getElementById("botao-adicionar")
     const modal = document.querySelector("dialog")
-    const buttonClose = document.querySelector("dialog button#close")
+    const botao_fechar = document.querySelector("dialog button#close")
+    const botoes_editar = document.getElementsByClassName("botao-editar")
 
-    button.onclick = function () {
+
+    botao_adicionar.onclick = function () {
         modal.showModal()
     }
 
-    buttonClose.onclick = function () {
+    botao_fechar.onclick = function () {
         modal.close()
     }
+
+    for (const botao_editar of botoes_editar) {
+        botao_editar.addEventListener("click", function (event) {
+            /***
+             * @type HTMLLIElement
+             **/
+            const element_pai = event.target.closest("li")
+            element_pai.classList.add("edicao")
+            element_pai.innerHTML = `
+                <input type="text" placeholder="Insira a descrição do item">
+                <img src="/imagens/Save.svg" alt="Icone de salvar">
+            `
+        })
+    };
 </script>
 
 </html>

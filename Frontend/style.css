@@ -99,6 +99,11 @@ li>div {
     gap: var(--gap-padrao);
 }
 
+li>div>button {
+    background: none;
+    border: none;
+}
+
 li>input {
     flex-grow: 1;
     color: var(--cor-white-smoke);
