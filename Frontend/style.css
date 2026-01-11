@@ -90,9 +90,23 @@ ul>li {
     align-items: center;
 }
 
+ul>li.edicao {
+    background-color: var(--cor-midnight-violet-900);
+}
+
 li>div {
     display: flex;
     gap: var(--gap-padrao);
+}
+
+li>input {
+    flex-grow: 1;
+    color: var(--cor-white-smoke);
+    border-color: var(--cor-White-smoke-60);
+}
+
+li>input::placeholder {
+    color: var(--cor-White-smoke-60);
 }
 
 
@@ -170,6 +184,7 @@ input {
     padding: 4px 8px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, .6);
+    background-color: transparent;
 }
 
 footer {
